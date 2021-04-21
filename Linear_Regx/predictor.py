@@ -44,7 +44,8 @@ def ping():
 @app.route('/invocations', methods=['POST', 'GET'])
 def transformation():
     # Get input JSON data and convert it to a DF
-    # input_json = flask.request.get_json()
+    input_json = flask.request.get_json()
+    print(input_json)
     # input = input_json['input']['exp1']
     predictions = float(boost.predict([1000000, 50, 1, 'maybe', 0, 0, 'Owner', 'Owner']))
 
